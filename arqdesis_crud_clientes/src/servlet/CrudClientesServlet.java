@@ -124,7 +124,7 @@ public class CrudClientesServlet extends HttpServlet
 	{
 		StringBuilder str = new StringBuilder();
 		
-		str.append("<html><head><title> Consulta de cliente</title></head><body>");
+		str.append("<html><head><title> Consulta de cliente </title></head><body>");
 		str.append("<form method=\"get\" action = \"http://localhost:8080/arqdesis_crud_clientes/clientes.html\">");
 		str.append("Dados do cliente:<br> ");
 		str.append("Código: ");
