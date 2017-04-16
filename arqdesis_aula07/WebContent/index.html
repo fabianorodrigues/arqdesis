@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Criar Usuário</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+    <script>
+	function formatar(mascara, documento)
+	{
+	  var i = documento.value.length;
+	  var saida = mascara.substring(0,1);
+	  var texto = mascara.substring(i)
+	  
+	  if (texto.substring(0,1) != saida)
+	            documento.value += texto.substring(0,1);
+	  
+	}
+	</script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Cadastro</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Usuário</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="main" class="container">
+        <h3 class="page-header">Incluir Usuário</h3>
+        <form action="incluirUsuario" method="post">
+        
+            <div class="row">
+                <div class="form-group col-md-8">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="nome" required maxlength="100" placeholder="Nome completo obrigatório">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="cpf">CPF</label>
+                    <input type="text" class="form-control" name="cpf" id="cpf" required maxlength="14" placeholder="CPF obrigatório" OnKeyPress="formatar('###.###.###-##', this)">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="rg">RG</label>
+                    <input type="text" class="form-control" name="rg" id="rg" maxlength="12" placeholder="RG opcional" OnKeyPress="formatar('##.###.###-#', this)">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="data">Data de Nascimento</label>
+                    <input type="text" class="form-control" name="data" id="data" maxlength="10" required placeholder="Data de nascimento obrigatória" OnKeyPress="formatar('##/##/####', this)"">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="login">Login</label>
+                    <input type="text" class="form-control" name="login" id="login" required maxlength="10" placeholder="Login obrigatório">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="senha">Senha</label>
+                    <input type="password" class="form-control" name="senha" id="senha" required maxlength="10" placeholder="Senha obrigatório">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="tipo">Tipo de Usuario</label>
+                    <select class="form-control" name="tipo" id="tipo">
+                    <option value="Atendente" class="form-control">Atendente</option>
+                    <option value="Gerente" class="form-control">Gerente</option>
+                    </select>
+                </div>
+            </div>
+            
+            <hr />
+            <div id="actions" class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary" name="salvar" value="Criar">Salvar</button>
+                    <a href="index.html" class="btn btn-default">Cancelar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
